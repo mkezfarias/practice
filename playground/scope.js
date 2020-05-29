@@ -48,3 +48,5 @@ function sayHi(name) {
 
 
 yell();
+
+console.log('it works!')

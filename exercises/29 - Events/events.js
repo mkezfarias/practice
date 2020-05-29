@@ -1,31 +1,24 @@
 const butts = document.querySelector('.butts');
-const coolButton = document.querySelector('.cool');
+const coolButts = document.querySelector('.cool');
 
 function handleClick() {
-  console.log('🐛 IT GOT CLICKED!!!');
+  console.log('it got clicked');
 }
 
-const hooray = () => console.log('HOORAY!');
+butts.addEventListener('click', handleClick);
+coolButts.addEventListener('click', handleClick);
 
-butts.addEventListener('click', function() {
-  console.log('Im an anon!');
-});
-coolButton.addEventListener('click', hooray);
+coolButts.removeEventListener('click', handleClick);
 
-butts.removeEventListener('click', handleClick);
+const hooray = () => console.log('hooray!');
 
-// Listen on multiple items
+coolButts.addEventListener('click', hooray);
+
 const buyButtons = document.querySelectorAll('button.buy');
 
 function handleBuyButtonClick(event) {
-  console.log('You clicked a button!');
-  const button = event.target;
-  // console.log(button.textContent);
-  // console.log(parseFloat(event.target.dataset.price));
-  console.log(event.target);
+  console.log('u buying it');
   console.log(event.currentTarget);
-  console.log(event.target === event.currentTarget);
-  // Stop this event from bubbling up
   // event.stopPropagation();
 }
 
@@ -33,21 +26,13 @@ buyButtons.forEach(function(buyButton) {
   buyButton.addEventListener('click', handleBuyButtonClick);
 });
 
-window.addEventListener(
-  'click',
-  function(event) {
-    console.log('YOU CLICKED THE WINDOW');
-    console.log(event.target);
-    console.log(event.type);
-    // event.stopPropagation();
-    console.log(event.bubbles);
-  },
-  { capture: true }
-);
+window.addEventListener('click', function() {
+  console.log('you clicked the window');
+});
 
-const photoEl = document.querySelector('.photo');
+const photo = document.querySelector('.photo');
 
-photoEl.addEventListener('mouseenter', e => {
+photo.addEventListener('mouseenter', function(e) {
   console.log(e.currentTarget);
   console.log(this);
 });

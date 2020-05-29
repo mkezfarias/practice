@@ -5,10 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etch A Sketch</title>
-  <link rel="stylesheet" href="../../base.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Coiny&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <div class="title"> Spark some color!. Use your <span>Arrow Keys</span> to draw something.</div>
   <div class="canvasWrap">
     <canvas width="1600" height="1000" id="etch-a-sketch"></canvas>
     <div class="buttons">
@@ -16,7 +18,7 @@
     </div>
 
   </div>
-  <script src="./etch-a-sketch-FINISHED.js"></script>
+  <script src="./etch-a-sketch.js"></script>
 
   <style>
     body {
@@ -25,21 +27,52 @@
       align-items: center;
       justify-items: center;
       background: white;
-      background: url(https://s3.amazonaws.com/media.locally.net/original/HABA_ALT_2017-08-02-13-22-45.jpg);
+      background-image: url(https://thumbs.dreamstime.com/b/vertical-bw-gradient-halftone-dots-background-horizontal-template-using-black-halftone-dot-pattern-98919000.jpg);
       background-size: cover;
     }
 
     canvas {
-      border: 30px solid #e80000;
+      border: 30px solid black;
       border-radius: 10px;
       /* Set the width and height to half the actual size so it doesn't look pixelated */
-      width: 800px;
-      height: 500px;
+      width: 300px;
+      height: 350px;
       background: white;
+      margin-top: 40px;
     }
 
     canvas.shake {
       animation: shake 0.5s linear 1;
+    }
+
+    button.shake {
+      font-size: 25px;
+      padding: 10px;
+      background-color: black;
+      width: 860px;
+      color: white;
+      border: 3px solid white;
+      border-radius: 8px;
+      font-family: 'Coiny';
+
+    }
+
+    .title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      font-family: 'Coiny';
+      font-size: 25px;
+      font-weight: bolder;
+      color: #ffffff;
+      background-color: black;
+      padding: 20px;
+      text-align: center;
+    }
+
+    span {
+      color: rgb(255, 197, 8);
     }
 
     @keyframes shake {
