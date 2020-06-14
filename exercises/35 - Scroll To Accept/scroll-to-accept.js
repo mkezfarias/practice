@@ -1,16 +1,13 @@
 const terms = document.querySelector('.terms-and-conditions');
+const watch = document.querySelector('.watch');
 const button = document.querySelector('.accept');
 
-const watch = document.querySelector('.watch');
+const ob = new IntersectionObserver(obCallback);
 
-const ob = new IntersectionObserver(obCallBack, {
-  root: terms,
-  threshold: 0.1,
-});
-
-function obCallBack(thingObserved) {
-  if (thingObserved[0].intersectionRatio > 0) {
+function obCallback(payload) {
+  if (payload[0].isIntersecting) {
     button.disabled = false;
+    ob.unobserve(terms.lastElementChild);
   } else {
     button.disabled = true;
   }

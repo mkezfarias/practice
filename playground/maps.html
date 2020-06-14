@@ -9,35 +9,37 @@
 </head>
 
 <body>
-  <ul class="prizes"></ul>
+  <ul class="prizes">
+
+  </ul>
   <script>
-    const person1 = {
-      name: 'wes',
-      age: 200
-    };
+const person1 = {
+  name: 'wes',
+  age: 200,
+};
 
-    const myMap = new Map();
-    // .set()
-    myMap.set('name', 'wes');
-    myMap.set(100, 'This is a number');
-    myMap.set(person1, 'Really Cool');
-    console.log(myMap);
+const myMap = new Map();
 
-    const score = 200;
-    const prizes = new Map();
-    prizes.set(100, 'Bear');
-    prizes.set(200, 'Duck');
-    prizes.set(300, 'Car');
-    console.log(`you win a ${prizes.get(score)}`);
+// .set()
+myMap.set('name', 'wes');
+myMap.set(111, 'number');
+myMap.set(person1, 'how cool');
 
-    // select that ul
-    const ul = document.querySelector('.prizes');
-    for (const [points, prize] of prizes) {
-      const li = `<li>${points} - ${prize}</li>`;
-      ul.insertAdjacentHTML('beforeend', li);
-    }
-    // .has()
-    // .delete()
+console.log(myMap);
+
+const score = 100;
+const prizes = new Map();
+prizes.set(100, 'bear');
+prizes.set(200, 'duck');
+prizes.set(300, 'car');
+
+console.log(`you win a ${prizes.get(score)}`);
+
+const ul = document.querySelector('.prizes');
+for (const [points, prize] of prizes) {
+  const li = `<li> ${points} - ${prize} </li>`;
+  ul.insertAdjacentHTML('beforeend', li);
+}
   </script>
 </body>
 

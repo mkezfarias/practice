@@ -17,8 +17,8 @@
     const wes = {
       name: 'wes',
       age: 100,
-      cool: true
-    }
+      cool: true,
+    };
 
     // For
     // for (let i = 100; i <= 120; i += 2) {
@@ -31,50 +31,36 @@
 
     // For of
 
-    for (const letter of name) {
-      console.log(letter);
-    }
+for (const letter of name) {
+  console.log(letter);
+}
 
-    for (const number of numbers) {
-      console.log(number)
-    }
-    // For in - used for looping over keys of an object
-    for (const prop in wes) {
-      console.log(prop)
-    }
+for (const number of numbers) {
+  console.log(number);
+}
 
-    const baseHumanStats = {
-      feet: 2,
-      arms: 2,
-      eyes: 2,
-      head: 1
-    };
+for (const prop in wes) {
+  console.log(prop);
+}
 
-    function Human(name) {
-      this.name = name;
-    }
+const baseHuman = {
+  feet: 2,
+  hands: 2,
+  eyes: 2,
+  head: 1,
+};
 
-    Human.prototype = baseHumanStats;
+function Human(name) {
+  this.name = name;
+}
 
-    const wes2 = new Human('wes');
+Human.prototype = baseHuman;
 
-    console.log(Object.entries(wes2))
+const wes2 = new Human('wes');
 
-    for (const prop in wes2) {
-      console.log(prop);
-    }
-
-    // While Loop
-    let cool = true;
-    let i = 1;
-    while (cool === true) {
-      console.log('You are cool');
-      i++;
-      if (i > 100) {
-        cool = false;
-      }
-    }
-
+for (const prop in wes2) {
+  console.log(prop);
+}
   </script>
 </body>
 
