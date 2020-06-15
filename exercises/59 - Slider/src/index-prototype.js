@@ -2,23 +2,18 @@ function Slider(slider) {
   if (!(slider instanceof Element)) {
     throw new Error('no slider passed in');
   }
-
   this.slides = slider.querySelector('.slides');
   this.slider = slider;
-  this.prevButton = slider.querySelector('.goToPrev');
-  this.nextButton = slider.querySelector('.goToNext');
-
-  // bind the methods to the instance when we need them
-  this.prevButton = this.prevButton.bind(this);
-  this.nextButton = this.nextButton.bind(this);
+  const prevButton = slider.querySelector('.goToPrev');
+  const nextButton = slider.querySelector('.goToNext');
 
   // when the slider is created, run the start slider function
   this.startSlider();
   this.applyClasses();
 
   // event listeners
-  this.prevButton.addEventListener('click', () => this.move('back'));
-  this.nextButton.addEventListener('click', this.move);
+  prevButton.addEventListener('click', () => this.move('back'));
+  nextButton.addEventListener('click', () => this.move());
 }
 
 Slider.prototype.startSlider = function() {
@@ -34,8 +29,8 @@ Slider.prototype.applyClasses = function() {
   this.prev.classList.add('prev');
   this.next.classList.add('next');
 };
-
 Slider.prototype.move = function(direction) {
+  const classesToRemove = ['prev', 'current', 'next'];
   this.prev.classList.remove('prev', 'current', 'next');
   this.current.classList.remove('prev', 'current', 'next');
   this.next.classList.remove('prev', 'current', 'next');
@@ -60,3 +55,5 @@ Slider.prototype.move = function(direction) {
 
 const mySlider = new Slider(document.querySelector('.slider'));
 const dogSlider = new Slider(document.querySelector('.dog-slider'));
+
+console.log(mySlider, dogSlider);
