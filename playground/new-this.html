@@ -28,9 +28,10 @@
       }
 
       Pizza.prototype.describe = function() {
-        return `this pizza is for ${
-          this.customer
-        } with toppings ${this.toppings.join(",")} with ${this.slices} left`;
+        return `this 
+        pizza is for ${this.customer} with toppings ${this.toppings.join(
+          ","
+        )} with ${this.slices} left`;
       };
 
       Pizza.prototype.eat = function() {
