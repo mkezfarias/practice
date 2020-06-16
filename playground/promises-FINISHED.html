@@ -90,7 +90,7 @@
       const p3 = makePizza(['pine']);
 
       // promise.allSettled will bring the results for all the resolved and rejected promises
-      const dinnerPromise2 = Promise.allSettled([p1, p2, p3]);
+      const dinnerPromise2 = Promise.allSettled([p1, p2, dinnerPromise3]);
       dinnerPromise2.then(results => console.log(results));
 
       // promise.all will break the chain of promisses when one is rejected so it wont return any other
