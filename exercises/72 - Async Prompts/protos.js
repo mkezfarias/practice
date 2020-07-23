@@ -12,7 +12,7 @@ function DwarfRabbit(name){
     Dwarf.call(this)
 }
 
-let cuttie = new DwarfRabbit("cuttie")
+let cuttieR  = new DwarfRabbit("cuttie")
 
 
-console.log(cuttie)
+console.log(cuttieR)
