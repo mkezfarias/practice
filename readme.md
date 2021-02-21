@@ -1,12 +1,4 @@
 
-# Beginner JavaScript
-
-This is a practice environment for javascript 
-
-These are the starter files and solutions to the [Beginner JavaScript](https://BeginnerJavaScript.com) course
-
-
-## Community Resources
 
 Please feel free to add your blog post, videos, notes, or anything else related to the course :) 
 
